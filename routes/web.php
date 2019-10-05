@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return '<h1>Hello Foo</h1>'
+    return '<h1>Hello Foo</h1>';
 });
