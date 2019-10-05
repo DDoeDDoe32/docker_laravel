@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
 @section('style')
-	body {background: green, color: white;}
+	<style>
+		body {background: green, color: white;}
+	</style>
 @endsection
 
 @section('content')
