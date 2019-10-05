@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function() {
-	$item = ['apple', 'banana', 'tomato'];
+	$items = ['apple', 'banana', 'tomato'];
 
 	return view('welcome', ['items' => $items]);
 });
