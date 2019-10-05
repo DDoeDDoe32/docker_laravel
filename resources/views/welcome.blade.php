@@ -2,7 +2,7 @@
 
 @section('style')
 	<style>
-		body {background: green, color: white;}
+		body {background: green; color: white;}
 	</style>
 @endsection
 
