@@ -6,5 +6,5 @@ use Illuminate\Http\Request;
 
 class WelcomController extends Controller
 {
-    //
+    return view('welcome');
 }
