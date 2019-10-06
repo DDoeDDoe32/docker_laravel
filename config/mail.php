@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'log'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,11 +55,11 @@ return [
     |
     */
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'john@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Admin'),
+    'from' => [ 'address' => 'john@example.com', 'name'=>'Admin' ],
+        #'address' => env('MAIL_FROM_ADDRESS', 'john@example.com'),
+        #'name' => env('MAIL_FROM_NAME', 'Admin'),
         #'address' => 'john@example.com', 'name'=>'Admin'
-    ],
+    #],
 
     /*
     |--------------------------------------------------------------------------
