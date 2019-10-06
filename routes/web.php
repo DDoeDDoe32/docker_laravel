@@ -29,7 +29,7 @@ Route::get('auth/login', function() {
 });
 
 Route::get('protected', function() {
-	dump(session()->all());
+	# dump(session()->all());
 
 	if (! auth()->check()) {
 		return '누구세요?';
