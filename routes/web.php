@@ -18,7 +18,7 @@ Route::resource('articles', 'ArticlesController');
 Route::get('auth/login', function() {
 	$credentials = [
 		'email' => 'john@example.com',
-		'password' => 'password'
+		'password' => 'secret'
 	];
 
 	if (! auth()->attempt($credentials)) {
@@ -29,7 +29,7 @@ Route::get('auth/login', function() {
 });
 
 Route::get('protected', function() {
-	# dump(session()->all());
+	dump(session()->all());
 
 	if (! auth()->check()) {
 		return '누구세요?';
