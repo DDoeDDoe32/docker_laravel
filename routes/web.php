@@ -18,7 +18,7 @@ Route::resource('articles', 'ArticlesController');
 Route::get('auth/login', function() {
 	$credentials = [
 		'email' => 'john@example.com',
-		'password' => 'secret'
+		'password' => 'password'
 	];
 
 	if (! auth()->attempt($credentials)) {
