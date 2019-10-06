@@ -21,7 +21,7 @@ Route::get('auth/login', function() {
 		'password' => 'password'
 	];
 
-	if (! auth()->attempt($credentails)) {
+	if (! auth()->attempt($credentials)) {
 		return '로그인 정보가 정확하지 않습니다.';
 	}
 
