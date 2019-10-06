@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+#Route::get('/', 'WelcomeController@index');
 
 Route::resource('articles', 'ArticlesController');
