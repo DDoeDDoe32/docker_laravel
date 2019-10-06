@@ -42,3 +42,6 @@ Route::get('auth/logout', function() {
 
 	return '또 봐요~';
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
