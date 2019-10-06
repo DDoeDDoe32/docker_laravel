@@ -16,7 +16,7 @@ Route::get('/', 'WelcomeController@index');
 Route::resource('articles', 'ArticlesController');
 
 Route::get('auth/login', function() {
-	$credentials [
+	$credentials = [
 		'email' => 'john@example.com',
 		'password' => 'password'
 	];
