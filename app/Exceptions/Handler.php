@@ -46,15 +46,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if (app()->environment('production')) {
-            if ($excetpion instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
-                return response(view('errors.notice', [
-                    'title' => 'ss',
-                    'description' => 'dd'
-                ]), 404);
-            }
-        }
-
         return parent::render($request, $exception);
     }
 }
