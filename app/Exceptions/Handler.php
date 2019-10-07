@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
     {
         if (app()->environment('production')) {
             if ($excetpion instanceof \Illuminate\Database\Eloquent\ModelNotFoundExcetpion) {
-                response(view('errors.notice', [
+                return response(view('errors.notice', [
                     'title' => '찾을 수 없습니다.',
                     'description' => '죄송합니다! 요청하신 페이지가 없습니다.'
                 ]), 404);
