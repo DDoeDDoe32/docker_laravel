@@ -8,10 +8,9 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        $articles = \App\Article::latest()->paginate(3);
-        dd(view('articles.index', compact('articles'))->render());
+        $articles = \App\Article::get();
+
         return view('articles.index', compact('articles'));
-    	#return __METHOD__ . '은(는) Article 컬렉션을 조회합니다.';
     }
 
     public function create()
