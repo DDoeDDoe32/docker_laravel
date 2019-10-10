@@ -8,7 +8,7 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        $articles = \App\Article::get();
+        $articles = \App\Article::with('user')->get();
 
         return view('articles.index', compact('articles'));
     }
