@@ -8,7 +8,11 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        $articles = \App\Article::with('user')->get();
+        $articles = \App\Article::get();
+
+        // user() 관계가 필요 없는 다른 로직 수행
+
+        $articles->load('user')
 
         return view('articles.index', compact('articles'));
     }
