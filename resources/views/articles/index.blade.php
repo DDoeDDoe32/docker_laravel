@@ -16,10 +16,11 @@
 			<p>글이 없습니다.</p>
 			@endforelse
 		</ul>
-	</div>
-	@if($articles->count())
+		@if($articles->count())
 		<div class="text-center">
 			{!! $articles->render() !!}
 		</div>
-	@endif
+		@endif
+	</div>
+	
 @stop
