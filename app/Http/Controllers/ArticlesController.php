@@ -8,11 +8,7 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        $articles = \App\Article::get();
-
-        // user() 관계가 필요 없는 다른 로직 수행
-
-        $articles->load('user');
+        $articles = \App\Article::latest()->paginate(3);
 
         return view('articles.index', compact('articles'));
     }
