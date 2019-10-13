@@ -15,7 +15,8 @@ class ArticlesController extends Controller
 
     public function create()
     {
-    	return __METHOD__ . '은(는) Article 컬렉션을 만들기 위한 폼을 담은 뷰를 반환합니다.';
+        return view('articles.create');
+    	# return __METHOD__ . '은(는) Article 컬렉션을 만들기 위한 폼을 담은 뷰를 반환합니다.';
     }
 
     public function store(Request $request)
