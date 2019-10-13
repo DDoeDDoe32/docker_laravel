@@ -21,7 +21,20 @@ class ArticlesController extends Controller
 
     public function store(Request $request)
     {
-    	return __METHOD__ . '은(는) 사용자의 입력한 폼 데이터로 새로운 Article 컬렉션을 만듭니다.';
+        $rules = [
+            'title'   => ['required'],
+            'content' => ['required', 'min:10'],
+        ];
+
+        $validator = \Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        return redirect(route('articles.index'))->with('flash_message', '작성하신 글이 저장되었습니다.');
+
+    	# return __METHOD__ . '은(는) 사용자의 입력한 폼 데이터로 새로운 Article 컬렉션을 만듭니다.';
     }
 
     public function show($id)
