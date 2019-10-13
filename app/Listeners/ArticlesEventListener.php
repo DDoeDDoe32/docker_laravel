@@ -5,6 +5,7 @@ namespace App\Listeners;
 # use App\Events\article.created;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Log;
 
 class ArticlesEventListener
 {
@@ -27,7 +28,7 @@ class ArticlesEventListener
     public function handle(\App\Events\ArticlesEvent $event)
     {
         if ($event->action === 'created') {
-            \Log::info(sprintf(
+            Log::info(sprintf(
                 '새로운 포럼 글이 등록되었습니다.: %s',
                 $event->article->title
             ));
