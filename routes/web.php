@@ -63,9 +63,10 @@ Route::get('mail', function() {
 	$article = App\Article::with('user')->find(1);
 
 	return Mail::send(
-		'emails.articles.created',
+		['text'=>'emails.articles.created-text'],
 		compact('article'),
 		function ($message) use ($article) {
+			$message->from('bong31432@gmail.com', 'bong');
 			$message->to('cb3209@naver.com');
 			$message->subject('새 글이 등록되었습니다 -' . $article->title);
 		}
