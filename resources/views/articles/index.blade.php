@@ -7,7 +7,7 @@
 		<ul>
 			@forelse($articles as $article)
 			<li>
-				{{ $article->user->name }}
+				{{ $article->title }}
 				<small>
 					by {{ $article->user->name }}
 				</small>
