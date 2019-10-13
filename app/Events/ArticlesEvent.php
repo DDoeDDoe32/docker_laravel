@@ -19,9 +19,16 @@ class ArticlesEvent
      *
      * @return void
      */
-    public function __construct()
+
+
+    public $article;
+
+    public $action;
+
+    public function __construct(\App\Article $article, $action = 'created')
     {
-        //
+        $this->article = $article;
+        $this->action = $action;
     }
 
     /**
