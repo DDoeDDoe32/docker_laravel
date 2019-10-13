@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ArticlesRequest;
 
 class ArticlesController extends Controller
 {
@@ -19,29 +20,8 @@ class ArticlesController extends Controller
     	# return __METHOD__ . '은(는) Article 컬렉션을 만들기 위한 폼을 담은 뷰를 반환합니다.';
     }
 
-    public function store(Request $request)
+    public function store(ArticlesRequest $request)
     {
-        $rules = [
-            'title'   => ['required'],
-            'content' => ['required', 'min:10'],
-        ];
-
-        $messages = [
-            'title.required' => '제목은 필수 입력 항목입니다.',
-            'content.required' => '본문은 필수 입력 항목입니다.',
-            'content.min' => '본문은 최소 :min 글자 이상이 필요합니다.',
-        ];
-
-
-        $this->validate($request, $rules, $messages);
-        /*
-        $validator = \Validator::make($request->all(), $rules, $messages);
-
-        if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
-        }
-        */
-
         $article = \App\User::find(1)->articles()->create($request->all());
 
         if (! $article) {
