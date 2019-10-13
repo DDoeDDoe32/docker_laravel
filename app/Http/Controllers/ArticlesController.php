@@ -26,7 +26,13 @@ class ArticlesController extends Controller
             'content' => ['required', 'min:10'],
         ];
 
-        $validator = \Validator::make($request->all(), $rules);
+        $messages = [
+            'title.required' => '제목은 필수 입력 항목입니다.',
+            'content.required' => '본문은 필수 입력 항목입니다.',
+            'content.min' => '본문은 최소 :min 글자 이상이 필요합니다.',
+        ];
+
+        $validator = \Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
