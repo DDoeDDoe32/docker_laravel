@@ -32,11 +32,15 @@ class ArticlesController extends Controller
             'content.min' => '본문은 최소 :min 글자 이상이 필요합니다.',
         ];
 
+
+        $this->validate($request, $rules, $messages);
+        /*
         $validator = \Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
+        */
 
         $article = \App\User::find(1)->articles()->create($request->all());
 
