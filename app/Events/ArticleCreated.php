@@ -10,27 +10,14 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ArticleCreated
+class ArticleCreated extends Event
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    /**
-     * Create a new event instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+    public $article;
 
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|array
-     */
-    public function broadcastOn()
+    public function __construct(\App\Article $article)
     {
-        return new PrivateChannel('channel-name');
+        $this->article = $article;
     }
 }

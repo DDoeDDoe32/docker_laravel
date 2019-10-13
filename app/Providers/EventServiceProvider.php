@@ -30,7 +30,7 @@ class EventServiceProvider extends ServiceProvider
         parent::boot();
 
         \Event::listen(
-            'article.created',
+            \App\Events\ArticleCreated::class,
             \App\Listeners\ArticlesEventListener::class
         );
 
