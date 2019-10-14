@@ -2,7 +2,7 @@
 
 @section('content')
 	<div>
-		<h1>새 포럼 글 쓰기</h1>
+		<h1>새 포럼 글 쓰기2</h1>
 
 		<hr />
 
