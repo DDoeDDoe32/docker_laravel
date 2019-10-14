@@ -38,9 +38,10 @@ class ArticlesController extends Controller
     public function show($id)
     {
         $article = \App\Article::findOrFail($id);
-        dd($article);
+        debug($article->toArray());
 
-        return $article->toArray();
+        return view('articles.show', compact('article'));
+        # return $article->toArray();
     	# return __METHOD__ . '은(는) 다음 기본 키를 가진 Article 모델을 조회합니다.:' . $id;
     }
 
