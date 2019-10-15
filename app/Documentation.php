@@ -15,7 +15,7 @@ class Documentation
 
     protected function path($file)
     {
-    	$file = ends_with($file, '.md') ? $file : $file . '.md';
+    	$file = Str::endsWith($file, '.md') ? $file : $file . '.md';
     	$path = base_path('docs' . DIRECTORY_SEPARATOR . $file);
 
     	if (! File::exists($path)) {
