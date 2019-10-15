@@ -3,6 +3,8 @@
 namespace App;
 
 use File;
+use Illuminate\Support\Str;
+
 
 class Documentation
 {
