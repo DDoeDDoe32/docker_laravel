@@ -16,7 +16,6 @@ class DocsController extends Controller
     public function show($file = null)
     {
     	$index = \Cache::remember('docs.index', 120, function() {
-            dd('reached');
             return markdown($this->docs->get());
         });
 
