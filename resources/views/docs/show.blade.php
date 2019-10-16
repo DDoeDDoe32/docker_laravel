@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-md-3 docs__sidebar">
 				<aside>
-					{{ !$index !! }}
+					{{!! $index !!}}
 				</aside>
 			</div>
 
