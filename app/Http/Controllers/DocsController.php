@@ -8,7 +8,7 @@ class DocsController extends Controller
 {
     protected $docs;
 
-    public function__construct(\App\Documentation $docs)
+    public function __construct(\App\Documentation $docs)
     {
     	$this->docs = $docs;
     }
