@@ -2,4 +2,4 @@
 
 ![](images/foo-img-01.png)
 
-그림 1 PHP
+그림 1 PHP 마스코트
