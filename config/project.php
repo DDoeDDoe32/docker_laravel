@@ -2,6 +2,6 @@
 
 return [
 	'name' => 'My Application',
-	'url' => 'http://myapp.dev:80',
+	'url' => 'http://myapp.dev:8000',
 	'description' => '',
 ];
