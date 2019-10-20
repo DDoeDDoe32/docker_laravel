@@ -21,7 +21,7 @@
     @yield('style')
 </head>
 <body id="app-layout">
-    @include('layouts.partial.navigation')
+    @include('layouts.partials.navigation')
 
     <div class="container">
         @include('flash::message')
